@@ -1,0 +1,22 @@
+* C:\Users\Admin\Desktop\LTSPICE\TwostageopampwC.asc
+M5 N003 N004 0 0 CMOSN l=180n w=2072n
+M1 Vg Vin1 N003 N003 CMOSN l=180n w=2876n
+M2 N001 Vin2 N003 N003 CMOSN l=180n w=2876n
+V1 Vin1 0 0.9 AC -0.5 0
+V2 VDD 0 1.8
+V3 Vin2 0 0.9 AC 0.5 0
+M3 VDD Vg Vg VDD CMOSP l=180n w=1565n
+M4 VDD Vg N001 VDD CMOSP l=180n w=1565n
+M8 N004 N004 0 0 CMOSN l=180n w=3450n
+I1 VDD N004 0.04m
+M7 N002 N004 0 0 CMOSN l=180n w=17986n
+M6 VDD N001 N002 VDD CMOSP l=180n w=52985n
+C1 N001 N002 2.4p
+C2 0 N002 10p
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Admin\AppData\Local\LTspice\lib\cmp\standard.mos
+.INCLUDE tsmc018.lib
+.ac dec 100 1 1T
+.backanno
+.end
